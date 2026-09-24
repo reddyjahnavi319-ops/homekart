@@ -1,0 +1,13 @@
+{
+  "name": "homekart",
+  "version": "1.0.0",
+  "description": "HomeKart - Pure Homemade E-Commerce Website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "http-server -p 3000 -o"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

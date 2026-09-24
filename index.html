@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HomeKart - Premium homemade pickles, sweets, spices, healthy foods, and snacks delivered to your doorstep. Inspired by traditional recipes.">
+  <title>HomeKart | Pure Homemade Indian Delicacies</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="container navbar-container">
+      
+      <!-- Logo -->
+      <a href="#/" class="logo" id="header-logo">
+        <h1>HomeKart</h1>
+        <span>PURE & HOMEMADE</span>
+      </a>
+
+      <!-- Search Bar -->
+      <div class="search-wrapper">
+        <div class="search-bar">
+          <input type="text" id="search-input" placeholder="Search for homemade pickles, sweets, spices, snacks..." autocomplete="off">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" id="search-btn">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </div>
+        <!-- Search suggestions dropdown -->
+        <div class="search-suggestions" id="search-suggestions"></div>
+      </div>
+
+      <!-- Hamburger menu (mobile only) -->
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- Navigation Actions -->
+      <div class="nav-actions" id="nav-actions">
+        <!-- Wishlist -->
+        <a href="#/wishlist" class="nav-btn" id="nav-wishlist-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span>Wishlist</span>
+          <div class="badge-count" id="wishlist-badge">0</div>
+        </a>
+
+        <!-- Cart -->
+        <a href="#/cart" class="nav-btn" id="nav-cart-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span>Cart</span>
+          <div class="badge-count" id="cart-badge">0</div>
+        </a>
+
+        <!-- Login / User Profile -->
+        <button class="nav-btn nav-btn-login" id="auth-nav-btn">Login</button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Category ribbon (Flipkart style sub-nav) -->
+  <nav class="category-ribbon">
+    <div class="container ribbon-container" id="category-ribbon-container">
+      
+      <!-- All Category -->
+      <div class="ribbon-item" data-category="all">
+        <div class="ribbon-icon-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+        </div>
+        <span>All Products</span>
+      </div>
+
+      <!-- Pickles -->
+      <div class="ribbon-item" data-category="pickles">
+        <div class="ribbon-icon-wrapper">
+          <!-- Stylized Pickle Jar SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 18c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V9H6v9z"></path>
+            <path d="M8 5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2H8V5z"></path>
+            <line x1="6" y1="9" x2="18" y2="9"></line>
+            <circle cx="10" cy="13" r="1"></circle>
+            <circle cx="14" cy="15" r="1"></circle>
+          </svg>
+        </div>
+        <span>Pickles</span>
+      </div>
+
+      <!-- Sweets -->
+      <div class="ribbon-item" data-category="sweets">
+        <div class="ribbon-icon-wrapper">
+          <!-- Sweets SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            <path d="M12 2A15.3 15.3 0 0 0 8 12a15.3 15.3 0 0 0 4 10"></path>
+            <path d="M2 12h20"></path>
+          </svg>
+        </div>
+        <span>Sweets</span>
+      </div>
+
+      <!-- Spices -->
+      <div class="ribbon-item" data-category="spices">
+        <div class="ribbon-icon-wrapper">
+          <!-- Spices (Mortar/Spices icon) -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v4"></path>
+            <path d="M17 5l-2.5 2.5"></path>
+            <path d="M7 5l2.5 2.5"></path>
+            <path d="M22 13.5a8.5 8.5 0 0 1-17 0V11h17v2.5z"></path>
+            <path d="M9 17v4"></path>
+            <path d="M15 17v4"></path>
+          </svg>
+        </div>
+        <span>Spices</span>
+      </div>
+
+      <!-- Snacks -->
+      <div class="ribbon-item" data-category="snacks">
+        <div class="ribbon-icon-wrapper">
+          <!-- Snacks SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <circle cx="8" cy="9" r="1.5" fill="currentColor"></circle>
+            <circle cx="15" cy="10" r="1" fill="currentColor"></circle>
+            <circle cx="11" cy="14" r="1.5" fill="currentColor"></circle>
+            <circle cx="16" cy="15" r="1.5" fill="currentColor"></circle>
+            <path d="M12 2a10 10 0 0 1 8 4"></path>
+          </svg>
+        </div>
+        <span>Snacks</span>
+      </div>
+
+      <!-- Healthy Food -->
+      <div class="ribbon-item" data-category="healthy">
+        <div class="ribbon-icon-wrapper">
+          <!-- Healthy (Leaf icon) -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.58-1 9.2A7 7 0 0 1 11 20z"></path>
+            <path d="M9 22v-6c0-1.7 1.3-3 3-3h1"></path>
+          </svg>
+        </div>
+        <span>Healthy Food</span>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Main View Container -->
+  <main id="app-content">
+    <!-- Dynamic page content will be injected here by app.js -->
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      
+      <!-- Footer Column 1: Info -->
+      <div class="footer-col">
+        <h3>Home<span>Kart</span></h3>
+        <p>Bringing the authentic warmth and taste of traditional homemade food products straight to your dining table. Made by passionate home cooks using legacy recipes and 100% natural, premium ingredients.</p>
+        <div class="social-links">
+          <a href="#" class="social-icon" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer Column 2: Categories -->
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <div class="footer-links">
+          <a href="#/products?category=pickles">Traditional Pickles</a>
+          <a href="#/products?category=sweets">Desi Ghee Sweets</a>
+          <a href="#/products?category=spices">Stone-Ground Spices</a>
+          <a href="#/products?category=snacks">Healthy Baked Snacks</a>
+          <a href="#/products?category=healthy">Organic & Healthy Food</a>
+        </div>
+      </div>
+
+      <!-- Footer Column 3: Quick Links -->
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="#/">Home</a>
+          <a href="#/about">Our Story (About)</a>
+          <a href="#/contact">Get In Touch (Contact)</a>
+          <a href="#/profile">My Account</a>
+          <a href="#/wishlist">My Wishlist</a>
+        </div>
+      </div>
+
+      <!-- Footer Column 4: Newsletter -->
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p>Subscribe to receive updates on new products, culinary stories, and grandmother's recipes!</p>
+        <form class="newsletter-form" id="newsletter-form">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit">Join</button>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="container footer-bottom">
+      <p>&copy; 2026 HomeKart. All rights reserved. Created with love for traditional cooking.</p>
+      <p>Made in India</p>
+    </div>
+  </footer>
+
+  <!-- Auth Modal (Login / Sign Up) -->
+  <div class="modal-overlay" id="auth-modal">
+    <div class="modal-container">
+      <div class="modal-header-tabs">
+        <button class="modal-tab-btn active" id="tab-login-btn">Login</button>
+        <button class="modal-tab-btn" id="tab-signup-btn">Sign Up</button>
+      </div>
+      <div class="modal-body">
+        <button class="modal-close-btn" id="auth-modal-close" aria-label="Close modal">&times;</button>
+        
+        <!-- Login Panel -->
+        <div class="modal-view-panel active" id="modal-login-panel">
+          <form id="login-form" class="modal-view-panel active">
+            <div class="form-group">
+              <label for="login-email">Email or Mobile Number</label>
+              <input type="text" id="login-email" required placeholder="Enter Email / Mobile number">
+            </div>
+            <div class="form-group">
+              <label for="login-password">Password</label>
+              <input type="password" id="login-password" required placeholder="Enter Password">
+            </div>
+            <button type="submit" class="modal-submit-btn">Login</button>
+          </form>
+          <p class="modal-switch-text">New to HomeKart? <button id="switch-to-signup">Create an account</button></p>
+        </div>
+
+        <!-- Sign Up Panel -->
+        <div class="modal-view-panel" id="modal-signup-panel">
+          <form id="signup-form" class="modal-view-panel active">
+            <div class="form-group">
+              <label for="signup-name">Full Name</label>
+              <input type="text" id="signup-name" required placeholder="Enter Full Name">
+            </div>
+            <div class="form-group">
+              <label for="signup-email">Email Address</label>
+              <input type="email" id="signup-email" required placeholder="Enter Email Address">
+            </div>
+            <div class="form-group">
+              <label for="signup-phone">Mobile Number</label>
+              <input type="tel" id="signup-phone" required pattern="[0-9]{10}" placeholder="Enter 10-digit Mobile Number">
+            </div>
+            <div class="form-group">
+              <label for="signup-password">Password</label>
+              <input type="password" id="signup-password" required minlength="6" placeholder="Create Password">
+            </div>
+            <button type="submit" class="modal-submit-btn">Register</button>
+          </form>
+          <p class="modal-switch-text">Already have an account? <button id="switch-to-login">Login here</button></p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
